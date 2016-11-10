@@ -15,7 +15,7 @@ NewsManagerModel.prototype = {
 
   getTitle: function (index) {
     return this.storyList[index].webTitle;
-  }
+  },
 
   getUrl: function (index) {
     return this.storyList[index].webUrl;
