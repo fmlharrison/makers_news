@@ -5,8 +5,8 @@
   };
 
 NewsManagerModel.prototype = {
-  saveNews: function (story) {
-    this.storyList.push(story);
+  saveNews: function (stories) {
+    this.storyList = stories;
   },
 
   addCount: function () {

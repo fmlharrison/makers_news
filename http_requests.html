@@ -21,6 +21,7 @@
     xhr.addEventListener("readystatechange", processRequest, false);
 
     function processRequest(e) {
+      console.log(xhr.readyState);
       if (xhr.readyState == 4 && xhr.status == 200) {
         var headlines = JSON.parse(xhr.responseText);
         var stories = headlines.response.results;
