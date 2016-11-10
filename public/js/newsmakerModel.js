@@ -5,7 +5,7 @@
   };
 
 NewsManagerModel.prototype = {
-  newNews: function (story) {
+  saveNews: function (story) {
     this.storyList.push(story);
   },
 
@@ -15,6 +15,10 @@ NewsManagerModel.prototype = {
 
   getTitle: function (index) {
     return this.storyList[index].webTitle;
+  }
+
+  getUrl: function (index) {
+    return this.storyList[index].webUrl;
   }
 
 };
