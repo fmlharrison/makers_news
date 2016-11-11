@@ -24,12 +24,19 @@ var testSuite = function (controller) {
       removeLinks();
     })();
 
+    (function showSummary() {
+      controller.createStory(stories);
+      var storyLink = document.getElementById("0");
+      storyLink.click();
+      expect.elementIdToContainInnerText("hello", "storySummary");
+      removeLinks();
+    })();
+
     function removeLinks() {
       var element = document.getElementById("headlines");
       while (element.firstChild) {
         element.removeChild(element.firstChild);
       }
     }
-
 
 };

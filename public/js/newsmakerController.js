@@ -6,6 +6,7 @@ function NewsManagerController (storySummary, headlines, NewsManagerModel, NewsM
   this.NewsManagerModel = NewsManagerModel;
   this.NewsManagerView = NewsManagerView;
   this.xhr = new XMLHttpRequest();
+  this.setupHeadlines();
 }
 
 NewsManagerController.prototype = {
@@ -16,7 +17,8 @@ NewsManagerController.prototype = {
 
   showSummary: function(id){
     this.NewsManagerView.invisible('headlines');
-    console.log("Need to finish this one!")
+    summary = "Hello"
+    this.NewsManagerView.displaySummary('hello');
   },
 
   setupHeadlines: function() {
@@ -27,13 +29,8 @@ NewsManagerController.prototype = {
   },
 
   apiRequest: function(){
-    console.log(this.xhr);
-    console.log(this.xhr.readyState);
     this.xhr.open('GET', "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail", true);
-    console.log(this.xhr.readyState);
     this.xhr.send();
-    console.log(this.xhr.readyState);
-    console.log(this.xhr);
     self = this;
     this.xhr.onreadystatechange = function(){
       if (this.readyState === 4 && this.status === 200) {

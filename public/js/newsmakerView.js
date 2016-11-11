@@ -13,7 +13,18 @@ NewsManagerView.prototype = {
       var list = "<li id='" + i + "'><img src='" + thumbnail + "'><br><a href='#" + i + "'>" + headline + "</a></li><br>";
       document.getElementById("headlines").innerHTML += list;
     }
-  }
+  },
+
+  displaySummary: function(text) {
+     var summary = "<p>" + text + "</p>";
+     document.getElementById("storySummary").innerHTML = summary;
+   },
+
+   invisible: function(id) {
+      var element = document.getElementById(id);
+      element.style.display = "none";
+    }
+
 };
 
 exports.NewsManagerView = NewsManagerView;
