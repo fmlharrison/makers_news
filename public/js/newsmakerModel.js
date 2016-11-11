@@ -1,16 +1,11 @@
 (function (exports) {
   function NewsManagerModel() {
     this.storyList = [];
-    this.count = 0;
   };
 
 NewsManagerModel.prototype = {
   saveNews: function (stories) {
     this.storyList = stories;
-  },
-
-  addCount: function () {
-    this.count++;
   },
 
   getTitle: function (index) {

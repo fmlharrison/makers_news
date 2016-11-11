@@ -13,7 +13,6 @@ NewsManagerController.prototype = {
   createStory: function(JSON) {
     this.NewsManagerModel.saveNews(JSON);
     this.NewsManagerView.createLink(this.NewsManagerModel.storyList);
-    this.NewsManagerModel.addCount();
   },
 
   showSummary: function(id){
@@ -29,8 +28,13 @@ NewsManagerController.prototype = {
   },
 
   apiRequest: function(){
+    console.log(this.xhr);
+    console.log(this.xhr.readyState);
     this.xhr.open('GET', "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-references=all&show-fields=thumbnail", true);
+    console.log(this.xhr.readyState);
     this.xhr.send();
+    console.log(this.xhr.readyState);
+    console.log(this.xhr);
     self = this;
     this.xhr.onreadystatechange = function(){
       if (this.readyState === 4 && this.status === 200) {
