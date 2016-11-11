@@ -29,7 +29,7 @@ NewsManagerController.prototype = {
   apiRequest: function(){
     console.log(this.xhr);
     console.log(this.xhr.readyState);
-    this.xhr.open('GET', "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-references=all&show-fields=thumbnail", true);
+    this.xhr.open('GET', "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail", true);
     console.log(this.xhr.readyState);
     this.xhr.send();
     console.log(this.xhr.readyState);
