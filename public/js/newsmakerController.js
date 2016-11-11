@@ -6,7 +6,6 @@ function NewsManagerController (storySummary, headlines, NewsManagerModel, NewsM
   this.NewsManagerModel = NewsManagerModel;
   this.NewsManagerView = NewsManagerView;
   this.xhr = new XMLHttpRequest();
-  this.apiRequest();
 }
 
 NewsManagerController.prototype = {

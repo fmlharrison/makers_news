@@ -7,6 +7,6 @@
                               headlines,
                               new NewsManagerModel(),
                               new NewsManagerView());
-    controller.apiRequest();
-  });
+    testSuite(controller);
+    });
 })();
