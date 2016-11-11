@@ -7,15 +7,20 @@ var testSuite = function (controller) {
 
     (function seeIfFirstHeadlinesCrated() {
       controller.createStory(stories);
-      expect.elementIdToContainInnerText("Pound hits five-week high, as Trump fears hit stock markets - business live", 0);
+      expect.elementIdToContainInnerText("A member's view: 'You need to plan a long time before you're ill'", 0);
       removeLinks();
     })();
 
     (function seeIfLastHeadlinesCrated() {
       controller.createStory(stories);
-      expect.elementIdToContainInnerText("Why Michelle Obama is unlikely to run for president", 9);
+      expect.elementIdToContainInnerText("The week started with an old-school jailbreak, and ended with ...", 9);
       removeLinks();
     })();
+
+    function showsThumbnailImages() {
+      controller.createStory(stories);
+
+    }
 
     function removeLinks() {
       var element = document.getElementById("headlines");
