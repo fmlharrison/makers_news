@@ -1,8 +1,6 @@
-(function () {
+var testSuite = function (controller) {
 
-  window.addEventListener("load", function () {
+    console.log(controller);
 
 
-  })
-
-})();
+};
