@@ -2,9 +2,10 @@
   window.addEventListener("load", function() {
     var storySummary = document.getElementById('storySummary');
     var headlines = document.getElementById('headlines');
-    console.log(document)
+    var fullStory = document.getElementById('fullStory');
     var controller = new NewsManagerController(storySummary,
                               headlines,
+                              fullStory,
                               new NewsManagerModel(),
                               new NewsManagerView());
     controller.apiRequest();
