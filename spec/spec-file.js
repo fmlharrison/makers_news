@@ -1,11 +1,10 @@
 var testSuite = function (controller) {
 
-    console.log(controller);
-
     var stories = dummyData.response.results;
-    console.log(stories);
+    var summary = dummySummary;
+    var summarySentences = dummySummary.sentences;
 
-    (function seeIfFirstHeadlinesCrated() {
+    (function seeIfFirstHeadlinesCreated() {
       controller.createStory(stories);
       expect.elementIdToContainInnerText("A member's view: 'You need to plan a long time before you're ill'", 0);
       removeLinks();
@@ -21,15 +20,22 @@ var testSuite = function (controller) {
       controller.createStory(stories);
       imgUrl = "https://media.guim.co.uk/b4c346f9e4bc39b227e71c4ec41ab3cc02464559/0_0_1920_1152/500.jpg";
       expect.elementAttributeToContainInnerHTML(imgUrl, "img", 0, "src" );
+      removeLinks();
     })();
 
     (function showSummary() {
-      controller.createStory(stories);
-      var storyLink = document.getElementById("0");
-      storyLink.click();
-      expect.elementIdToContainInnerText("hello", "storySummary");
+      controller.showSummary(summarySentences);
+      expect.elementIdToContainInnerText(summarySentences, "storySummary");
       removeLinks();
     })();
+
+    // (function showFullStory() {
+    //   controller.createStory(stories);
+    //   var storyLink = document.getElementById("0");
+    //   storyLink.click();
+    //   expect.elementIdToContainInnerText("This is a story summary", "storySummary");
+    //   removeLinks();
+    // })
 
     function removeLinks() {
       var element = document.getElementById("headlines");
